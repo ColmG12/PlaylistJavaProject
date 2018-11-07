@@ -1,5 +1,6 @@
 public class Artist {
 
-    private String name;
+    private int artistID;
+    private String artist_Name;
     private String nationality;
 }
