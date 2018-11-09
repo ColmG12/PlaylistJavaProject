@@ -8,7 +8,7 @@ public class Song {
     private int chartPeak;
     private Genre genre;
     private Artist artist;
-    //location
+    //Audio file location
 
     //No argument constructor
     public Song(){
