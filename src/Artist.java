@@ -2,49 +2,56 @@ public class Artist {
 
     private int artistID;
     private String artistName;
-    private String nationality;
+    private String nationOfArtist;
 
     //No argument constructor
     public Artist(){
         this.artistID = 0;
         this.artistName = ("Unknown");
-        this.nationality = ("Unknown");
+        this.nationOfArtist = ("Unknown");
     }
 
-    public Artist(int artistID, String artistName, String nationality) {
+    //3 argument constructor
+    public Artist(int artistID, String artistName, String nationOfArtist) {
         this.artistID = artistID;
         this.artistName = artistName;
-        this.nationality = nationality;
+        this.nationOfArtist = nationOfArtist;
     }
 
+    //Getter
     public int getArtistID() {
         return artistID;
     }
 
+    //Setter
     public void setArtistID(int artistID) {
         this.artistID = artistID;
     }
 
+    //Getter
     public String getArtistName() {
         return artistName;
     }
 
+    //Setter
     public void setArtistName(String artistName) {
         this.artistName = artistName;
     }
 
-    public String getNationality() {
-        return nationality;
+    //Getter
+    public String getnationOfArtist() {
+        return nationOfArtist;
     }
 
-    public void setNationality(String nationality) {
-        this.nationality = nationality;
+    //Setter
+    public void setnationOfArtist(String nationality) {
+        this.nationOfArtist = nationOfArtist;
     }
 
     @Override
     public String toString() {
         return "Artist ID: " + artistID +
                 "\nArtist Name: " + artistName +
-                "\nNationality: " + nationality;
+                "\nNation Of Artist: " + nationOfArtist;
     }
 }

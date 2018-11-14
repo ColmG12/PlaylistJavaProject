@@ -1,39 +1,43 @@
 public class Genre {
 
-    private String genreID;
-    private String description;
+    private int genreID;
+    private String genreDescription;
 
     //No argument constructor
     public Genre(){
-        this.genreID = ("Unknown");
-        this.description = ("Unknown");
+        this.genreID = 0;
+        this.genreDescription = ("Unknown");
     }
 
     //2 argument constructor
-    public Genre(String genreID, String description) {
+    public Genre(int genreID, String genreDescription) {
         this.genreID = genreID;
-        this.description = description;
+        this.genreDescription = genreDescription;
     }
 
-    public String getGenreID() {
+    //Getter
+    public int getGenreID() {
         return genreID;
     }
 
-    public void setGenreID(String genreID) {
+    //Setter
+    public void setGenreID(int genreID) {
         this.genreID = genreID;
     }
 
-    public String getDescription() {
-        return description;
+    //Getter
+    public String getgenreDescription() {
+        return genreDescription;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    //Setter
+    public void setgenreDescription(String genreDescription) {
+        this.genreDescription = genreDescription;
     }
 
     @Override
     public String toString() {
         return "Genre ID: " + genreID +
-                "\nDescription: " + description;
+                "\nGenre Description: " + genreDescription;
     }
 }
