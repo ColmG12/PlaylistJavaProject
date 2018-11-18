@@ -1,113 +1,104 @@
 public class Song {
 
-    private int songID;
-    private String songTitle;
+    private int ID;
+    private String title;
+    private String artist;
+    private String genre;
     private int year;
-    private int chartPeak;
-    private int durationMins;
-    private int durationSecs;
-    private Genre genre;
-    private Artist artist;
-    //Audio file location
-
+    private String location;
+    private int duration;
 
     //No argument constructor
     public Song(){
-        this.songID = 0;
-        this.songTitle = ("Unknown");
+        this.ID = 0;
+        this.title = ("Unknown");
+        this.artist = ("Unknown");
+        this.genre = ("Unknown");
         this.year = 0;
-        this.chartPeak = 0;
-        this.durationMins = 0;
-        this.durationSecs = 0;
-        this.genre = new Genre(0,"Unknown");
-        this.artist = new Artist(0, "Unknown", "Unknown");
+        this.location = ("Unknown");
+        this.duration = 0;
     }
-    // 8 argument constructor
-    public Song(int songID, String songTitle, int year, int chartPeak, int durationMins,
-                int durationSecs, Genre genre, Artist artist) {
-        setSongID(songID);
-        setSongTitle(songTitle);
-        setYear(year);
-        setChartPeak(chartPeak);
-        setDurationMins(durationMins);
-        setDurationSecs(durationSecs);
-        setGenre(genre);
-        setArtist(artist);
+    // 7 argument constructor
+    public Song(int ID, String title, String artist, String genre,
+                int year, String location, int duration) {
+        setID(ID);
+        settitle(title);
+        setartist(artist);
+        setgenre(genre);
+        setyear(year);
+        setlocation(location);
+        setduration(duration);
     }
 
-    public int getSongID() {
-        return songID;
+    public int getID() {
+        return ID;
     }
 
-    public void setSongID(int songID) {
-        this.songID = songID;
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
-    public String getSongTitle() {
-        return songTitle;
+    public String gettitle() {
+        return title;
     }
 
-    public void setSongTitle(String songTitle) {
-        this.songTitle = songTitle;
+    public void settitle(String title) {
+        this.title = title;
     }
 
-    public int getYear() {
-        return year;
-    }
+    public String getartist() {
+        return artist;}
 
-    public void setYear(int year) {
-        this.year = year;
-    }
-
-    public int getChartPeak() {
-        return chartPeak;
-    }
-
-    public void setChartPeak(int chartPeak) {
-        this.chartPeak = chartPeak;
-    }
-
-    public int getDurationMins() {
-        return durationMins;
-    }
-
-    public void setDurationMins(int durationMins) {
-        this.durationMins = durationMins;
-    }
-
-    public int getDurationSecs() {
-        return durationSecs;
-    }
-
-    public void setDurationSecs(int durationSecs) {
-        this.durationSecs = durationSecs;
-    }
-
-    public Genre getGenre() {
-        return genre;
-    }
-
-    public void setGenre(Genre genre) {
-        this.genre = genre;
-    }
-
-    public Artist getArtist() {
-        return artist;
-    }
-
-    public void setArtist(Artist artist) {
+    public void setartist(String artist) {
         this.artist = artist;
     }
 
+    public String getgenre() {
+        return genre;}
+
+    public void setgenre(String genre) {
+        this.genre = genre;
+    }
+
+    public int getyear() {
+
+        return year;
+    }
+
+    public void setyear(int year) {
+
+        this.year = year;
+    }
+
+    public String getlocation() {
+
+        return location;
+    }
+
+    public void setlocation(String location) {
+
+        this.location = location;
+    }
+
+    public int getduration() {
+
+        return duration;
+    }
+
+    public void setduration(int duration) {
+
+        this.duration = duration;
+    }
+
+
     @Override
     public String toString() {
-        return "Song ID: " + songID +
-                "\nSong Title='" + songTitle +
+        return "Song ID: " + ID +
+                "\nSong Title: " + title +
+                "\nArtist: " + artist +
+                "\nGenre: " + genre +
                 "\nYear: " + year +
-                "\nChart Peak: " + chartPeak +
-                "\nDuration in Mins: " + durationMins +
-                "\nDuration in Secs: " + durationSecs +
-                "\nGenre: " + genre.toString() +
-                "\nArtist: " + artist.toString();
+                "\nLocation: " + location +
+                "\nDuration: " + duration;
     }
 }
