@@ -1,4 +1,4 @@
-//AudioFilePlayer.java
+//RadioPlayer.java
 /*Code researched and written by John Brosnan who sent it on for use with the audio aspects of the project
   It uses some of the JavaFX classes and contains its own driver to show how it might be used. The GUI contains
   2 JButtons, one plays an audio file while the other generates a random number between 1 and 1000*/
@@ -14,7 +14,7 @@ import java.awt.*;
 
 
 /*You pass in the path to the audio file you wish to play as a String to the static method playAudio()
-  and just call AudioFilePlayer.playAudio() as necessary from whichever class you need to use it from in your
+  and just call RadioPlayer.playAudio() as necessary from whichever class you need to use it from in your
   project*/
 
 public class RadioPlayer extends JFrame implements ActionListener{
@@ -27,16 +27,16 @@ public class RadioPlayer extends JFrame implements ActionListener{
 
 
     //some sample audio files I have in a folder called audio that I sent with this Java file  - note that the "audio"
-    // folder is assumed to be in the same folder as the bytecode AudioFilePlayer.class here so that relative file
+    // folder is assumed to be in the same folder as the bytecode RadioPlayer.class here so that relative file
     // paths can be used
 
-    String audioFile1 = "Song Folder/50 Cent-In Da Club.mp3", audioFile2 = "Song Folder/All Saints-Pure Shores.mp3";
+    String songFile1 = "Song Folder/50 Cent-In Da Club.mp3", audioFile2 = "Song Folder/All Saints-Pure Shores.mp3";
 
-    //Just a short sample driver for the AudioFilePlayer class to demonstrate how it can be used from other classes
+    //Just a short sample driver for the RadioPlayer class to demonstrate how it can be used from other classes
 
     public static void main(String args[])
     {
-        RadioPlayer player = new RadioPlayer(); //create the AudioFilePlayer GUI
+        RadioPlayer player = new RadioPlayer(); //create the RadioPlayer GUI
 
         //In order to avoid an "initialization exception" it is necessary to initiate the JavaFX Runtime when the
         // application is started
@@ -46,7 +46,7 @@ public class RadioPlayer extends JFrame implements ActionListener{
         JFXPanel fxPanel = new JFXPanel();
     }
 
-    //a sample GUI constructor to demonstrate the operation of the AudioFilePlayer class
+    //a sample GUI constructor to demonstrate the operation of the RadioPlayer class
     //You will never need to call this though in your own applications, you simply need
     //to call playAudio() on the class as it is a static method
 
@@ -124,7 +124,7 @@ public class RadioPlayer extends JFrame implements ActionListener{
 		  or else, if the other button was pressed, display a message dialog showing a randomly generated number between 1 and 1000*/
 
         if(e.getSource()==audioButton)
-            AudioFilePlayer.playAudio(audioFile1);
+            RadioPlayer.playAudio(songFile1);
         else
             JOptionPane.showMessageDialog(null,"The randomly generated number was " + (int)(Math.random()*1000 + 1));
     }
