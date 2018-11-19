@@ -24,12 +24,12 @@ public class PlaylistGUI {
 
         // Data to be displayed in the JTable
         String[][] data = {
-                { "Kundan Kumar Jha", "4031", "CSE" },
-                { "Anand Jha", "6014", "IT" }
+                { "515", "In Da Club", "50 Cent", "1970s", "2003", "50 Cent-In Da Club.mp3", "225" }
+                //{ "Anand Jha", "6014", "IT" }
         };
 
         // Column Names
-        String[] columnNames = { "Name", "Roll Number", "Department" };
+        String[] columnNames = { "ID", "Title", "Artist", "Genre", "Year", "Location", "Duration" };
 
         // Initializing the JTable
         JTable songtable= new JTable(data, columnNames);
