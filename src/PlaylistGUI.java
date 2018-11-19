@@ -25,7 +25,7 @@ public class PlaylistGUI {
         // Data to be displayed in the JTable
         String[][] data = {
                 { "515", "In Da Club", "50 Cent", "1970s", "2003", "50 Cent-In Da Club.mp3", "225" }
-                //{ "Anand Jha", "6014", "IT" }
+                //{ }
         };
 
         // Column Names

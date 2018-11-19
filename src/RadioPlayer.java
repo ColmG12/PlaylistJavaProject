@@ -30,7 +30,7 @@ public class RadioPlayer extends JFrame implements ActionListener{
     // folder is assumed to be in the same folder as the bytecode RadioPlayer.class here so that relative file
     // paths can be used
 
-    String songFile1 = "Song Folder/50 Cent-In Da Club.mp3", audioFile2 = "Song Folder/All Saints-Pure Shores.mp3";
+    String songFile1 = "Song Folder/50 Cent-In Da Club.mp3", songFile2 = "Song Folder/All Saints-Pure Shores.mp3";
 
     //Just a short sample driver for the RadioPlayer class to demonstrate how it can be used from other classes
 
