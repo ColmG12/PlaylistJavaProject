@@ -8,7 +8,7 @@ import java.sql.Statement;
 public class DBConnection {
     private  String driverClass = "org.mariadb.jdbc.Driver";
     private  Connection connection = null;
-    private  String url = "jdbc:mariadb://localhost:3306/oopproject";
+    private  String url = "jdbc:mariadb://localhost:3306/oopprojectdatabase";
     private  String username = "root"; // your username
     private  String password = ""; //your password
     public DBConnection(){
