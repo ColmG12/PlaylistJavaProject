@@ -1,15 +1,12 @@
 
-import javax.swing.JFrame;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-//import javax.swing.JPopupMenu;
-//import java.awt.FlowLayout;
+import javax.swing.JPopupMenu;
+import java.awt.FlowLayout;
 
-/*import java.io.BufferedReader;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;*/
+import java.io.IOException;
 
 //package com.javainterviewpoint;
 
@@ -58,10 +55,10 @@ public class PlaylistGUI
             //Lets print the Employee List
             for(Song s : songList)
             {
-                System.out.println(s.getID()+"   "+s.gettitle()+"   "
-                        +s.getartist()+"   "+s.getgenre()+"   "
-                        +s.getyear()+"   "+s.getlocation()+"   "
-                        +s.getduration()+"   ");
+                System.out.println(s.getID() + "   " + s.gettitle()+ "   "
+                        + s.getartist() + "   " + s.getgenre()+ "   "
+                        + s.getyear() + "   " + s.getlocation()+ "   "
+                        + s.getduration() + "   ");
             }
         }
         catch(Exception ee)
