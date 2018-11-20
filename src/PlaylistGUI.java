@@ -1,5 +1,5 @@
 
-import javax.swing.JPopupMenu;
+import javax.swing.*;
 import java.awt.FlowLayout;
 
 import java.io.BufferedReader;
@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlaylistGUI
+/*public class PlaylistGUI
 {
     //Delimiters used in the CSV file
     private static final String COMMA_DELIMITER = ",";
@@ -78,14 +78,13 @@ public class PlaylistGUI
             }
         }
     }
-}
+}*/
 
 
-/*public class PlaylistGUI {
+public class PlaylistGUI {
 
     // Constructor
-    PlaylistGUI()
-    {
+    PlaylistGUI() {
         // Frame initiallization
         JFrame radioframe = new JFrame();
 
@@ -94,15 +93,15 @@ public class PlaylistGUI
 
         // Data to be displayed in the JTable
         String[][] data = {
-                { "515", "In Da Club", "50 Cent", "1970s", "2003", "50 Cent-In Da Club.mp3", "225" }
-                //{ }
+                {"515", "In Da Club", "50 Cent", "1970s", "2003", "50 Cent-In Da Club.mp3", "225"},
+                { "515", "In Da Club", "50 Cent", "1970s", "2003", "50 Cent-In Da Club.mp3", "225"}
         };
 
         // Column Names
-        String[] columnNames = { "ID", "Title", "Artist", "Genre", "Year", "Location", "Duration" };
+        String[] columnNames = {"ID", "Title", "Artist", "Genre", "Year", "Location", "Duration"};
 
         // Initializing the JTable
-        JTable songtable= new JTable(data, columnNames);
+        JTable songtable = new JTable(data, columnNames);
         songtable.setBounds(30, 40, 200, 300);
 
         // adding it to JScrollPane
@@ -117,10 +116,10 @@ public class PlaylistGUI
     }
 
     // Driver  method
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         new PlaylistGUI();
-    }*/
+    }
+}
 
     /*public class Songs {
 
@@ -172,5 +171,5 @@ public class PlaylistGUI
                     s[i].genre + " and " + s[i].year + " and " + s[i].location + " and " +
                     s[i].duration);
         }
-    }*/
-//}
+    }
+}*/
