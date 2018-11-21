@@ -6,15 +6,20 @@ import java.sql.Statement;
  * Created by t00036478 on 01/02/2018.
  */
 public class DBConnection {
-    private  String driverClass = "org.mariadb.jdbc.Driver";
-    private  Connection connection = null;
-    private  String url = "jdbc:mariadb://localhost:3306/oopprojectdatabase";
-    private  String username = "root"; // your username
-    private  String password = ""; //your password
+    private   String driverClass = "org.mariadb.jdbc.Driver";
+    private   Connection connection = null;
+    //private  String url = "jdbc:mariadb://localhost:3306/oopprojectdatabase";
+    static final String url = "jdbc:mariadb://localhost:3306/oopprojectdatabase";
+    //DBConnection manager;
+    
+    
+    private   String username = "root"; // your username
+    private   String password = ""; //your password
     public DBConnection(){
+    	setConnection();
     }
 
-    private void setConnection() {
+    private  void setConnection() {
         try {
             Class.forName(driverClass).newInstance();
             connection = DriverManager.getConnection(url, username, password);
@@ -25,7 +30,7 @@ public class DBConnection {
         }
 
     }
-    private Connection getConnection() {
+    public  Connection getConnection() {
         if (connection == null) {
             setConnection();
         }
