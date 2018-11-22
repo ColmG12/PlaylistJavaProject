@@ -8,8 +8,8 @@ import java.sql.Statement;
 public class DBConnection {
     private   String driverClass = "org.mariadb.jdbc.Driver";
     private   Connection connection = null;
-    //private  String url = "jdbc:mariadb://localhost:3306/oopprojectdatabase";
-    static final String url = "jdbc:mariadb://localhost:3306/oopprojectdatabase";
+    private  String url = "jdbc:mariadb://localhost:3306/oopprojectdatabase";
+    //static final String url = "jdbc:mariadb://localhost:3306/oopprojectdatabase";
     //DBConnection manager;
     
     
@@ -30,7 +30,7 @@ public class DBConnection {
         }
 
     }
-    public  Connection getConnection() {
+    public Connection getConnection() {
         if (connection == null) {
             setConnection();
         }
