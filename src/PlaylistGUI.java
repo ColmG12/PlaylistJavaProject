@@ -1,5 +1,6 @@
-
+import java.awt.*;
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.FlowLayout;
 
 import java.io.BufferedReader;
@@ -22,14 +23,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javafx.embed.swing.JFXPanel; //need this for AudioFilePlayer as it uses JavaFX API
 
+import static com.sun.deploy.config.JREInfo.getAll;
+
 
 public class PlaylistGUI
 {
     //Delimiters used in the CSV file
     //private static final String COMMA_DELIMITER = ",";
 
-    public static void main(String args[])
-    {
+    public static <songList> void main(String args[]) throws SQLException {
         //BufferedReader br = null;
         DBConnection dbConn = new DBConnection(); //establish a connection to the MariaDB
         Connection conn = dbConn.getConnection(); //get a reference to the database connection object
@@ -190,7 +192,7 @@ public class PlaylistGUI
         }*/
 
         //Constructor
-        new PlaylistGUI();
+        //PlaylistGUI GUI = new PlaylistGUI();
         {
             // Frame initialization
             JFrame radioframe = new JFrame();
@@ -198,14 +200,38 @@ public class PlaylistGUI
             // Frame Title
             radioframe.setTitle("Playlist GUI");
 
-            // Data to be displayed in the JTable
-            String[][] data = {
-                    { "515", "In Da Club", "50 Cent", "1970s", "2003", "50 Cent-In Da Club.mp3", "225" }
-                    //{ }
-            };
-
             // Column Names
             String[] columnNames = { "ID", "Title", "Artist", "Genre", "Year", "Location", "Duration" };
+
+            //List<songList> Songs = (List<songList>) ((ArrayList<Song>) songList).clone();
+
+            //songList = new ArrayList<Song>();
+
+            String[][] data = new String[songList.size()][7];
+
+            int i = 0;
+
+            for(i = 0; i < columnNames.length; i++) {
+                data[i][0] = Song.getID();
+                data[i][1] = Song.gettitle();
+                data[i][2] = Song.getartist();
+                data[i][3] = Song.getgenre();
+                data[i][4] = Song.getyear();
+                data[i][5] = Song.getlocation();
+                data[i][6] = Song.getduration();
+                i++;
+            }
+
+            //DefaultTableModel model = new DefaultTableModel(columnNames, data);
+
+            //JTable = new JTable(model);
+
+            // Data to be displayed in the JTable
+            //String[][]data = {
+
+                    //{ "515", "In Da Club", "50 Cent", "1970s", "2003", "50 Cent-In Da Club.mp3", "225" }
+                    //{ }
+            //};
 
             // Initializing the JTable
             JTable songtable= new JTable(data, columnNames);
@@ -219,7 +245,7 @@ public class PlaylistGUI
             // Frame Visible = true
             radioframe.setVisible(true);
             //
-            //radioframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            radioframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         }
 
     /* Driver  method
