@@ -4,6 +4,8 @@
   2 JButtons, one plays an audio file while the other generates a random number between 1 and 1000*/
 
 import java.io.File;
+
+import javafx.scene.media.AudioClip;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.embed.swing.JFXPanel;
@@ -11,6 +13,8 @@ import javafx.application.Platform;
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
+import java.util.*;
+import java.util.List;
 
 
 /*You pass in the path to the audio file you wish to play as a String to the static method playAudio()
@@ -24,6 +28,123 @@ public class RadioPlayer extends JFrame implements ActionListener{
     static MediaPlayer mediaPlayer; //need to declare this reference globally to prevent garbage collector
     //from removing it prematurely when play() is called in the playAudio()
     //method, which would stop playing the clip after a few seconds
+
+    List<AudioClip> clips = new List<AudioClip>() {
+        @Override
+        public int size() {
+            return 0;
+        }
+
+        @Override
+        public boolean isEmpty() {
+            return false;
+        }
+
+        @Override
+        public boolean contains(Object o) {
+            return false;
+        }
+
+        @Override
+        public Iterator<AudioClip> iterator() {
+            return null;
+        }
+
+        @Override
+        public Object[] toArray() {
+            return new Object[0];
+        }
+
+        @Override
+        public <T> T[] toArray(T[] a) {
+            return null;
+        }
+
+        @Override
+        public boolean add(AudioClip audioClip) {
+            return false;
+        }
+
+        @Override
+        public boolean remove(Object o) {
+            return false;
+        }
+
+        @Override
+        public boolean containsAll(Collection<?> c) {
+            return false;
+        }
+
+        @Override
+        public boolean addAll(Collection<? extends AudioClip> c) {
+            return false;
+        }
+
+        @Override
+        public boolean addAll(int index, Collection<? extends AudioClip> c) {
+            return false;
+        }
+
+        @Override
+        public boolean removeAll(Collection<?> c) {
+            return false;
+        }
+
+        @Override
+        public boolean retainAll(Collection<?> c) {
+            return false;
+        }
+
+        @Override
+        public void clear() {
+
+        }
+
+        @Override
+        public AudioClip get(int index) {
+            return null;
+        }
+
+        @Override
+        public AudioClip set(int index, AudioClip element) {
+            return null;
+        }
+
+        @Override
+        public void add(int index, AudioClip element) {
+
+        }
+
+        @Override
+        public AudioClip remove(int index) {
+            return null;
+        }
+
+        @Override
+        public int indexOf(Object o) {
+            return 0;
+        }
+
+        @Override
+        public int lastIndexOf(Object o) {
+            return 0;
+        }
+
+        @Override
+        public ListIterator<AudioClip> listIterator() {
+            return null;
+        }
+
+        @Override
+        public ListIterator<AudioClip> listIterator(int index) {
+            return null;
+        }
+
+        @Override
+        public List<AudioClip> subList(int fromIndex, int toIndex) {
+            return null;
+        }
+    };
 
 
     //some sample audio files I have in a folder called audio that I sent with this Java file  - note that the "audio"
@@ -123,8 +244,11 @@ public class RadioPlayer extends JFrame implements ActionListener{
 		/*If the audioButton was pressed then call playAudio() to play the audio file associated with the reference audioFile1 (the gunshot)
 		  or else, if the other button was pressed, display a message dialog showing a randomly generated number between 1 and 1000*/
 
-        if(e.getSource()==audioButton)
-            RadioPlayer.playAudio(songFile1);
+        if(e.getSource()==audioButton) {
+            //Collections.shuffle(Collections.singletonList("Song Folder"));
+            RadioPlayer.playAudio(songFile2);
+        }
+
         else
             JOptionPane.showMessageDialog(null,"The randomly generated number was " + (int)(Math.random()*1000 + 1));
     }

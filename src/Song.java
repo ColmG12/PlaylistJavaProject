@@ -1,4 +1,11 @@
-public class Song {
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Vector;
+import java.util.stream.Stream;
+
+
+public class Song extends Vector<String> {
 
     private int ID;
     private String title;
@@ -9,7 +16,7 @@ public class Song {
     private int duration;
 
     //No argument constructor
-    public Song(){
+    public Song(String i, String datum, String s, String datum1){
         this.ID = 0;
         this.title = ("Unknown");
         this.artist = ("Unknown");
@@ -18,6 +25,10 @@ public class Song {
         this.location = ("Unknown");
         this.duration = 0;
     }
+
+    private List<Song> allSongs = new ArrayList<>();
+
+
     // 7 argument constructor
     public Song(int ID, String title, String artist, String genre,
                 int year, String location, int duration) {
@@ -28,6 +39,10 @@ public class Song {
         setyear(year);
         setlocation(location);
         setduration(duration);
+    }
+
+    public Song() {
+
     }
 
     public int getID() {
@@ -101,6 +116,4 @@ public class Song {
                 "\nLocation: " + location +
                 "\nDuration: " + duration;
     }
-
-
 }
